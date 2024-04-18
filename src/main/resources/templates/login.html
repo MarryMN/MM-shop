@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/header :: header-css"> </head>
+
+  <body style="background-image: url('/images/espresso.jpg')">
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3"
+        >
+          <form
+            autocomplete="off"
+            th:action="@{/login}"
+            class="form-signin"
+            method="POST"
+          >
+            <fieldset style="color: white">
+              <i> <h1 th:text="@{Welcome to M&M-shop}"></h1> </i><br />
+              <h3 th:text="@{Please Sign In}"></h3>
+              <br />
+              <label th:text="@{Username}"></label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control input-lg"
+                  placeholder=""
+                  required="true"
+                  autofocus="true"
+                />
+              </div>
+              <label th:text="@{Password}"></label>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control input-lg"
+                  placeholder=""
+                  required="true"
+                />
+              </div>
+
+              <span th:text="@{You don't have an account?}"></span>
+              <span>
+                <b><a th:href="@{/register}" th:text="@{REGISTER now!}"></a></b>
+              </span>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <input
+                    type="submit"
+                    name="login-submit"
+                    id="login-submit"
+                    class="btn btn-lg btn-primary btn-block"
+                    th:value="@{Log In}"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
+</html>

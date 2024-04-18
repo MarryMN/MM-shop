@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/header :: header-css"> </head>
+
+  <body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container">
+      <div class="row" style="margin-top: 20px">
+        <div
+          class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3"
+        >
+          <form
+            class="form-signin"
+            autocomplete="off"
+            th:action="@{register}"
+            th:object="${userForm}"
+            method="POST"
+          >
+            <fieldset>
+              <h1 th:text="@{Registration}"></h1>
+              <div class="form-group">
+                <label th:text="@{Username} + '*'"></label>
+                <input
+                  type="text"
+                  th:field="*{username}"
+                  class="form-control input-lg"
+                  title="username"
+                  autofocus="true"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label th:text="@{E-mail} + '*'"></label>
+                <input
+                  type="email"
+                  th:field="*{email}"
+                  class="form-control input-lg"
+                  title="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label th:text="@{Password} + '*'"></label>
+                <input
+                  type="password"
+                  th:field="*{password}"
+                  class="form-control input-lg"
+                  title="password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label th:text="@{Confirm password} + '*'"></label>
+                <input
+                  type="password"
+                  th:field="*{passwordConfirm}"
+                  class="form-control input-lg"
+                  title="passwordConfirm"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label th:text="@{First Name}"></label>
+                <input
+                  type="text"
+                  th:field="*{firstName}"
+                  class="form-control input-lg"
+                  title="firstName"
+                />
+              </div>
+              <div class="form-group">
+                <label th:text="@{Last Name}"></label>
+                <input
+                  type="text"
+                  th:field="*{lastName}"
+                  class="form-control input-lg"
+                  title="lastName"
+                />
+              </div>
+              <p th:text="@{Fields with * are required!}"></p>
+              <input
+                class="btn btn-outline-dark"
+                type="submit"
+                th:value="@{Register}"
+              />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
+</html>

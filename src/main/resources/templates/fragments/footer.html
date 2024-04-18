@@ -1,0 +1,22 @@
+<!doctype HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+    <div th:fragment="footer">
+        <div class="container">
+            <footer  style="color: white;">
+                <span th:text="@{&copy;2024 by M&M soft- m.msoft23@gmail.com}"></span>
+                <span>
+                    <b><a th:href="@{/about}" th:text="@{About us}" ></a></b>
+                </span>
+            </footer>
+        </div>
+        <script type="text/javascript" th:src="@{webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+    </div>
+</body>
+
+</html>

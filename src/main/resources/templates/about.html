@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/header :: header-css"> </head>
+
+  <body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="container">
+      <div class="starter-template">
+        <u><h1 th:text="@{About us}"></h1></u><br />
+        <h4>
+          Hello, we are M&M-soft. Thanks for visiting our web-shop. <br />
+          More about us on: www.mm-soft.rs. <br />
+          Contact: m.msoft23@gmail.com
+        </h4>
+        <img src="/images/MM.jpg" />
+      </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
+</html>
